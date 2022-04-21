@@ -19,8 +19,7 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   @OneToOne
-   //@MapsId
+   @OneToOne (cascade = CascadeType.ALL)
    private Car car;
 
    public User() {}
@@ -73,7 +72,7 @@ public class User {
    public Car getCar() {
       return car;
    }
-    public void setCar(Car car) {
+   public void setCar(Car car) {
       this.car = car;
     }
 
